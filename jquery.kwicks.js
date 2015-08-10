@@ -377,7 +377,7 @@
 		if ($.support.style) {
 			return function(el, style) { el.setAttribute('style', style); };
 		} else {
-			return function (el, style) { el.style.cssText = style; };
+			return function (el, style) { el.style.cssText = el.style.cssText + " " + style; };
 		}
 	})();
 
