@@ -604,7 +604,7 @@
 	 * "Destroys" this Kwicks instance plugin by performing the following:
 	 * 1) Stops any currently running animations
 	 * 2) Invokes all destroy handlers
-	 * 3) Clears out all style attributes on panels
+	 * 3) Clears all kwicks-related style attributes on panels
 	 * 4) Removes all kwicks class names from panels and container
 	 * 5) Removes the 'kwicks' data value from the container
 	 */
@@ -614,7 +614,13 @@
 			this.onDestroyHandlers[i]();
 		}
 		this.$panels
-			.attr('style', '')
+			.css('position', '')
+			.css('top', '')
+			.css('right', '')
+			.css('bottom', '')
+			.css('left', '')
+			.css('height', '')
+			.css('width', '')
 			.removeClass('kwicks-expanded kwicks-selected kwicks-collapsed');
 		this.$container
 			// note: kwicks and kwicks-<orientation> classes have extra smarts around them
